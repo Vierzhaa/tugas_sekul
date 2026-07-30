@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Jurnal KBM & Absensi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h2>Jurnal KBM</h2>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a
+              href="javascript:void(0)"
+              class="active"
+              onclick="loadData('siswa', event)"
+              >Data Siswa</a
+            >
+          </li>
+          <li>
+            <a href="javascript:void(0)" onclick="loadData('guru', event)"
+              >Data Guru</a
+            >
+          </li>
+          <li>
+            <a href="javascript:void(0)" onclick="loadData('kelas', event)"
+              >Data Kelas</a
+            >
+          </li>
+          <li>
+            <a href="javascript:void(0)" onclick="loadData('rombel', event)"
+              >Data Rombel</a
+            >
+          </li>
+          <li>
+            <a href="javascript:void(0)" onclick="loadData('jadwal', event)"
+              >Jadwal Pelajaran</a
+            >
+          </li>
+          <li>
+            <a href="javascript:void(0)" onclick="loadData('absensi', event)"
+              >Data Absensi</a
+            >
+          </li>
+        </ul>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <h1 id="page-title">Manajemen Data Siswa</h1>
+          <button class="btn-add" onclick="openModal()">+ Tambah Data</button>
+        </header>
+
+        <section class="content">
+          <table class="data-table">
+            <thead>
+              <tr id="table-head">
+                <th>Memuat kolom...</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <tr>
+                <td class="text-center">Memuat data...</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <div id="dataModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title">Tambah Data</h2>
+
+        <form id="dataForm" onsubmit="submitForm(event)">
+          <input type="hidden" id="input_id" />
+
+          <div id="form-fields-container"></div>
+
+          <button type="submit" class="btn-submit">Simpan</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
