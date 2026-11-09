@@ -1,10 +1,13 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 from utils import *
 
 app = Flask(__name__,)
 CORS(app) 
 
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 @app.route('/api/siswa', methods=['GET', 'POST'])
 def api_siswa():
