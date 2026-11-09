@@ -1,11 +1,6 @@
 import mysql.connector
 
-db = mysql.connector.connect (
-    host='localhost',
-    user='root',
-    password='',
-    database='db_jurnal'
-)
+from .connection import db
 
 def insert_data_jadwal(id_tahun_ajaran: int,id_guru: int, id_kelas: int, id_mapel: int, hari: str, jam_ke: int):
     cursor=db.cursor(dictionary=True)

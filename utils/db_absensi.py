@@ -1,11 +1,6 @@
 import mysql.connector
+from .connection import db
 
-db = mysql.connector.connect (
-    host='localhost',
-    user='root',
-    password='',
-    database='db_jurnal'
-)
 
 def insert_data_absensi(id_jurnal: int,id_siswa: int, id_ja: int, keterangan: str):
     cursor=db.cursor(dictionary=True)

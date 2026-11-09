@@ -1,11 +1,6 @@
 import mysql.connector
 
-db = mysql.connector.connect (
-    host='localhost',
-    user='root',
-    password='',
-    database='db_jurnal'
-)
+from .connection import db
 
 def insert_data_tahun(tahun: str, semester: str, status: int):
     if semester != "Ganjil" or semester != "Genap":

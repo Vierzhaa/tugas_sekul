@@ -1,11 +1,6 @@
 import mysql.connector
 
-db = mysql.connector.connect (
-    host='localhost',
-    user='root',
-    password='',
-    database='db_jurnal'
-)
+from .connection import db
 
 def insert_data_rombel(id_siswa: int,id_kelas: int, id_wali_kelas: int, id_ketua_kelas: str):
     cursor=db.cursor(dictionary=True)

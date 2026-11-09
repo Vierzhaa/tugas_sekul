@@ -1,11 +1,6 @@
 import mysql.connector
 
-db = mysql.connector.connect (
-    host='localhost',
-    user='root',
-    password='',
-    database='db_jurnal'
-)
+from .connection import db
 
 def insert_data_guru(nama_guru: str, nip: str):
     cursor=db.cursor(dictionary=True)

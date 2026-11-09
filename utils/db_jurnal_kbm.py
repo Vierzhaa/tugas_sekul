@@ -3,12 +3,7 @@ from datetime import date
 
 tanggal_sekarang = date.today()
 
-db = mysql.connector.connect (
-    host='localhost',
-    user='root',
-    password='',
-    database='db_jurnal'
-)
+from .connection import db
 
 def insert_data_jurnal_kbm(id_jadwal: int, tanggal: date.today()):
     cursor=db.cursor(dictionary=True)
